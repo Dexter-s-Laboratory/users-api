@@ -1,12 +1,16 @@
 var controller = require('./controllers');
 var router = require('express').Router();
 
-//Connect controller methods to their corresponding routes
-router.get('/example/:product_id', controller.example.get);
+// GET /api/users retrieve all users
 
-router.post('/example', controller.example.post);
+// GET /api/users/:user_id retrieve information for specific user (public/private)
 
-router.get('/', controller.rootJestTest.get)
+// POST /api/users (create new users)
+
+// PUT /api/users/:user_id/profile (update user profile)
+
+// DELETE /api/users/:user_id (delete account)
+
 
 module.exports = router;
 
