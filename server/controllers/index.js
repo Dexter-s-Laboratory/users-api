@@ -22,6 +22,10 @@ module.exports = {
     res.end()
   },
 
+  rateSeller: (req, res) => {
+    res.end()
+  },
+
   deleteUser: (req, res) => {
     res.end()
   }
