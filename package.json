@@ -4,7 +4,8 @@
   "description": "User management service for Superbox app",
   "main": "./server/server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "nodemon ./server/server.js"
   },
   "repository": {
     "type": "git",
