@@ -21,6 +21,10 @@ module.exports = {
 
   },
 
+  rateSellerInDB: () => {
+
+  },
+
   deleteUserFromDB: () => {
 
   }
