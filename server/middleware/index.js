@@ -20,12 +20,12 @@ module.exports = {
       .catch((err) => {
           console.error('Error decoding token:', err);
           res.status(403).send({ error: err });
-      });
+      })
       .then((uid) => {
           return db.query('SELECT id FROM users WHERE firbase_uid = $1', [uid]);
       })
       .then((userId) => {
-          if (!userId) => {
+          if (!userId) {
             res.status(404).end();
           } else {
             req.headers.userId = userId;
