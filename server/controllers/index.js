@@ -5,7 +5,8 @@ module.exports = {
   getAllUsers: (req, res) => {
     model.getAllUsersFromDB()
       .then((result) => {
-        res.send(result.rows);
+        console.log(result);
+        res.send(result);
       })
       .catch((err) => {
         console.error('Error retrieving users:', err);
@@ -20,7 +21,7 @@ module.exports = {
     if (req.headers.userId) {
       model.getUserByIdFromDB(req.headers.userId, true)
         .then((result) => {
-          res.send(result.rows);
+          res.send(result);
         })
         .catch((err) => {
           console.error('Error retrieving user:', err);
@@ -29,7 +30,7 @@ module.exports = {
     } else {
       model.getUserByIdFromDB(userId, false)
         .then((result) => {
-          res.send(result.rows);
+          res.send(result);
         })
         .catch((err) => {
           console.error('Error retrieving user:', err);
@@ -86,7 +87,7 @@ module.exports = {
 
     model.getUserByIdFromDB(adminId, true)
       .then((result) => {
-        if (result.rows.admin) {
+        if (result[0].admin) {
           return model.banUserProfileInDB(userId);
         } else {
           res.status(403).end();
