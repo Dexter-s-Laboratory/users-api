@@ -17,7 +17,7 @@ router.put('/users/:user_id/profile', controller.updateUserProfile);
 router.put('/users/:user_id/ban', controller.banUserProfile);
 
 // PUT /api/users/:user_id/rate (rate a user profile from app)
-router.put('/users/:user_id/ban', controller.rateSeller);
+router.put('/users/:user_id/rate', controller.rateSeller);
 
 // DELETE /api/users/:user_id (delete account)
 router.delete('/users/:user_id', controller.deleteUser);
