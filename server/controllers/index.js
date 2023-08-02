@@ -44,16 +44,14 @@ module.exports = {
     model.createUserInDB(data)
       .then((result) => {
         if (!data.address_line_2) {
-          return;
+          return result
         } else {
-          // May cause error
           console.log(result[0].id);
           let userId = result[0].id;
           return model.updateUserProfileInDB(userId, 'address_line_2', data.address_line_2);
         }
       })
       .then((result) => {
-        // May cause error
         let userId = result[0].id;
         return model.createSellerRatingsInDB(userId);
       })
