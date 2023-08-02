@@ -22,7 +22,7 @@ module.exports = {
           res.status(403).send({ error: err });
       })
       .then((uid) => {
-          return db.query('SELECT id FROM users WHERE firbase_uid = $1', [uid]);
+          return db.query('SELECT id FROM users WHERE firebase_uid = $1', [uid]);
       })
       .then((userId) => {
           if (!userId) {
