@@ -16,7 +16,7 @@ module.exports = {
 
   getUserById: (req, res) => {
 
-    var userId = req.params.user_id;
+    var userId = req.params.userId || null;
 
     if (req.headers.userId) {
       model.getUserByIdFromDB(req.headers.userId, true)
