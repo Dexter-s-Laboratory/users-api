@@ -10,7 +10,7 @@ const { decodeToken } = require('./middleware');
 app.use(morgan('dev'))
 app.use(express.json());
 
-app.use(decodeToken);
+// app.use(decodeToken);
 
 app.get('/test', (req, res) => {
   res.send('hello users world');

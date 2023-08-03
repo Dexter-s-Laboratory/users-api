@@ -5,7 +5,7 @@ var router = require('express').Router();
 router.get('/users', controller.getAllUsers);
 
 // GET /api/u/users/:user_id retrieve information for specific user (public/private)
-router.get('/users/:user_id', controller.getUserById);
+router.get('/users/:firebase_uid', controller.getUserById);
 
 // POST /api/u/users (create new users)
 router.post('/users', controller.createUser);

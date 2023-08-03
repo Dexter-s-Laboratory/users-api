@@ -24,11 +24,11 @@ module.exports = {
       .then((uid) => {
           return db.query('SELECT id FROM users WHERE firebase_uid = $1', [uid]);
       })
-      .then((userId) => {
-          if (!userId) {
+      .then((result) => {
+          if (!result[0].id) {
             res.status(404).end();
           } else {
-            req.headers.userId = userId;
+            req.headers.userId = result[0].id;
           }
       })
       .catch((err) => {
