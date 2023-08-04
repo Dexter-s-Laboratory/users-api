@@ -14,7 +14,7 @@ module.exports = {
   },
 
   createUserInDB: (data) => {
-    return db.query('INSERT INTO users (full_name, username, address_line_1, city, state_abbr, zip, phone_number, email, interests, firebase_uid) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, &10) RETURNING id', [data.full_name, data.username, data.address_line_1, data.city, data.state_abbr, data.zip, data.phone_number, data.email, data.interests, data.firebase_uid]);
+    return db.query('INSERT INTO users (full_name, username, address_line_1, city, state_abbr, zip, phone_number, email, interests, firebase_uid) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING id', [data.full_name, data.username, data.address_line_1, data.city, data.state_abbr, data.zip, data.phone_number, data.email, data.interests, data.firebase_uid]);
   },
 
   updateUserProfileInDB: (userId, fieldName, data) => {
