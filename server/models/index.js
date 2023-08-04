@@ -9,7 +9,7 @@ module.exports = {
     if (auth) {
       return db.query('SELECT * FROM users WHERE id = $1', [userId]);
     } else {
-      return db.query('SELECT u.id AS user_id, u.username, u.interests, sr.overall_1_count, sr.overall_2_count, sr.overall_3_count, sr.overall_4_count, sr.overall_5_count FROM users u LEFT JOIN seller_ratings sr on u.id = sr.seller_id WHERE u.id = $1', [userId]);
+      return db.query('SELECT u.id AS user_id, u.firebase_uid, u.username, u.interests, sr.overall_1_count, sr.overall_2_count, sr.overall_3_count, sr.overall_4_count, sr.overall_5_count FROM users u LEFT JOIN seller_ratings sr on u.id = sr.seller_id WHERE u.firebase_uid = $1', [userId]);
     }
   },
 
