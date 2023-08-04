@@ -15,8 +15,7 @@ module.exports = {
   },
 
   getUserById: (req, res) => {
-
-    var userId = req.params.userId || null;
+    var userId = req.params.firebase_uid || null;
 
     if (req.headers.userId) {
       model.getUserByIdFromDB(req.headers.userId, true)
