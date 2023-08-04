@@ -2,7 +2,7 @@ const db = require('../db');
 
 module.exports = {
   getAllUsersFromDB: () => {
-    return db.query('SELECT username FROM users');
+    return db.query('SELECT username, firebase_uid FROM users');
   },
 
   getUserByIdFromDB: (userId, auth) => {
